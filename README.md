@@ -1,39 +1,176 @@
-CFMS Plus – Tampermonkey Automation Script
+# CFMS Plus
 
-This repository contains a Tampermonkey userscript designed to enhance the functionality and user experience of the Case Flow Management System (CFMS) web application. The script introduces productivity-focused features such as customizable keyboard shortcuts, UI improvements, and optional automation tools that streamline daily workflows.
-
-Key Features
-
-Auto-Login: Automatically fills and submits the login form using securely stored credentials within Tampermonkey.
-
-Global Shortkeys: Quickly navigate across CFMS pages or trigger actions using intuitive keyboard shortcuts.
-
-UI Enhancements: Small quality-of-life improvements for smoother navigation and easier data entry.
-
-Workflow Automation: Automates repetitive tasks to reduce manual effort and improve efficiency.
+**CFMS Plus** is a Tampermonkey userscript designed to improve workflow efficiency inside **CFMS (Case Flow Management System)**.
+It introduces productivity-boosting features such as custom keyboard shortcuts, auto-navigation, and a secure auto-login system using encrypted credential storage — all while staying lightweight and non-intrusive.
 
 
-Why This Script?
+---
 
-CFMS is used for case tracking and workflow management. This script reduces time spent on repetitive actions and aims to make the platform more user-friendly without modifying the server-side application.
+## ✨ Features
 
-Requirements
+### 🔐 Secure Auto‑Login
 
-Tampermonkey browser extension
+* Stores username & password encrypted using AES-256.
 
-A modern browser (Chrome, Firefox, Edge, etc.)
+* Credentials are saved using the browser’s Tampermonkey storage.
+
+* Login fields are auto-filled and submitted safely.
+
+* Error-safe execution:
+   ✔ script checks
+   ✔ Page readiness
+   ✔ Element existence
+   ✔ Decryption validity
+   ✔ Tampermonkey storage availability
 
 
-Installation
+### ⌨️ Keyboard Shortcuts
 
-1. Install the Tampermonkey extension.
+* Enhance CFMS navigation with custom shortkeys.
+
+* Quickly focus important fields.
+
+* Easily trigger frequently used actions.
 
 
-2. Import the script from this repository.
+### 🛠 Automation & UI Enhancements
+
+* Autofocus form inputs.
+
+* Auto-expand hidden UI sections.
+
+* Highlight important items.
+
+* Smooth, persistent UX improvements.
+
+### 🧭 Quick Navigation Menu
+
+Press ` (backtick) to open a menu where you can jump to common CFMS views:
+* Case All List View
+* In Progress Cases
+* Cause List Views
+* Case Bundle
+* Exception Views
+* Data Migration
+* More coming soon…
+
+---
+
+## 📦 Installation
+
+1. Install Tampermonkey
+
+Get it for your browser:
+🔗 https://www.tampermonkey.net/
+
+2. Create a New Userscript
+
+Open Tampermonkey dashboard
+
+Click Create New Script
+
+Paste the content of CFMS Plus userscript
 
 
-3. Enable or configure features as needed through Tampermonkey settings.
+3. Save and Enable
 
-Disclaimer
+Click File → Save, then ensure the script is enabled.
 
-This project is a client-side enhancement tool. It does not modify CFMS servers or violate system integrity. Use responsibly and according to organization’s policies.
+
+## 🔧 Setup: Save Your Encrypted Credentials
+
+1. In CFMS, press Ctrl + Shift + Z
+
+
+2. A prompt appears asking for:
+
+Username
+
+Password
+
+
+
+3. Script encrypts them using AES-256
+
+
+4. Credentials are stored securely inside Tampermonkey
+
+
+
+You can update credentials anytime using the same shortcut.
+
+---
+
+
+
+## 🧩 Settings Include
+
+* Enable / disable auto-login
+
+* Update stored credentials
+
+* Toggle features:
+
+* Keyboard shortcuts
+
+* UI tweaks
+
+* Highlighting improvements
+
+
+
+
+---
+
+## 🛡️ Security Notes
+
+* Credentials are encrypted before saving.
+
+* Decryption happens only in memory, not stored.
+
+* Uses industry-standard AES-256 encryption.
+
+* Tampermonkey storage is domain-isolated.
+
+* No external network requests are made.
+
+* Credentials are never sent anywhere except CFMS during login.
+
+* Script is fully client-side.
+
+
+
+---
+
+## 📁 Project Structure
+
+/CFMS-Plus
+│── README.md
+│── cfms-plus.user.js    (the script)
+│── LICENSE              (optional)
+
+---
+
+## 🚀 Usage
+
+Once installed and configured:
+
+Auto-login will trigger automatically when CFMS login page is detected.
+
+Shortcuts work across compatible CFMS pages.
+
+Settings can be accessed through the Tampermonkey script menu.
+
+
+---
+
+## 🤝 Contributing
+
+If you find a bug or want a new shortcut/view added, feel free to open an issue.
+
+
+---
+
+## 📜 License
+
+MIT License. You are free to modify and distribute.
