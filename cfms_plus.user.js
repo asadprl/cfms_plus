@@ -83,6 +83,10 @@
     const CFMSPlus = {
 
         gotoView(viewName) {
+            if (typeof SiebelApp === 'undefined') {
+                console.warn("SiebelApp not available yet");
+                return;
+            }
             try {
                 SiebelApp.S_App.GotoView(
                     "",
@@ -148,6 +152,7 @@
                 cl: "LHC+Cause+List+-+List+View",
                 rcl: "LHC+Regular+Cause+List+View",
                 scl: "LHC+Supplementry+Cause+List+View",
+                tcl: "LHC+Urgent+Today+Cause+List+View",
                 dm: "LHC+Case+Data+Migration+Main+View",
                 x: "LHC+Lawyer+Case+Exceptions+View",
             };
@@ -175,15 +180,16 @@
         if (!e.shiftKey && e.key === SHORTCUT_PROMPT) {
             const msg = [
                 "Enter Page Code:",
-                "  c   = Case All List View",
-                "  d   = In Progress Cases",
+                "  c   = All Cases",
+                "  d   = Docket Cases",
                 "  h   = All Hearings",
                 "  b   = Case Bundle View",
                 "  cl  = Cause List",
                 "  rcl = Regular Cause List",
                 "  scl = Supplementary Cause List",
+                "  tcl = Today Cause List",
                 "  dm  = Data Migration Main View",
-                "  x   = Lawyer Case Exceptions View"
+                "  x   = Exceptions View"
             ].join("\n");
 
             const input = prompt(msg, "");

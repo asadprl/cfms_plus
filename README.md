@@ -17,10 +17,15 @@ It introduces productivity-boosting features such as custom keyboard shortcuts, 
 * Login fields are auto-filled and submitted safely.
 
 * Error-safe execution:
+
    ✔ script checks
+
    ✔ Page readiness
+
    ✔ Element existence
+
    ✔ Decryption validity
+
    ✔ Tampermonkey storage availability
 
 
@@ -77,27 +82,23 @@ Paste the content of CFMS Plus userscript
 Click File → Save, then ensure the script is enabled.
 
 
-## 🔧 Setup: Save Your Encrypted Credentials
+## ▶️ Using the Script
 
-1. In CFMS, press Ctrl + Shift + Z
+* Login Automatically
 
+   Press:
+   Ctrl + 0
 
-2. A prompt appears asking for:
+   If credentials are present → script auto-fills and logs in.
+   If missing → you are asked to configure them.
 
-Username
+* Navigate Quickly
 
-Password
+   Press:
+   ` (backtick)
 
-
-
-3. Script encrypts them using AES-256
-
-
-4. Credentials are stored securely inside Tampermonkey
-
-
-
-You can update credentials anytime using the same shortcut.
+   Select a shortcut code (e.g., c, d, cl, etc.)
+   and the script will open that specific CFMS view.
 
 ---
 
