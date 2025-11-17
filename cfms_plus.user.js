@@ -2,7 +2,7 @@
 // @name         CFMS Plus
 // @namespace    http://tampermonkey.net/
 // @version      0.2
-// @description  CFMS shortcuts + encrypted auto-login + safe error handling.
+// @description  adding productivity enhancements to CFMS, including custom shortkeys, auto-login, and quality-of-life automation tools.
 // @author       Asad Ullah
 // @match        *://cfms*
 // @include      *://cfms*
@@ -91,7 +91,7 @@
                 SiebelApp.S_App.GotoView(
                     "",
                     "",
-                    `/epublicsector_enu/start.swe?SWECmd=GotoView&SWEView=${encodeURIComponent(viewName)}`,
+                    `/epublicsector_enu/start.swe?SWECmd=GotoView&SWEView=${viewName}`,
                     "_sweclient._swecontent._sweview"
                 );
             } catch (err) {
@@ -145,16 +145,19 @@
 
         handleNavigation(code) {
             const map = {
-                c: "GHQ Case All List View",
-                d: "GHQ In Progress Cases View",
-                h: "LHC All Hearings View",
+                c: "GHQ+Case+All+List+View",
+                d: "GHQ+In+Progress+Cases+View",
+                h: "LHC+All+Hearings+View",
                 b: "LHC+Case+Bundle+View",
                 cl: "LHC+Cause+List+-+List+View",
+                tcl: "LHC+Urgent+Today+Cause+List+View",
+                ucl: "LHC+Urgent+Cause+List+View",
                 rcl: "LHC+Regular+Cause+List+View",
                 scl: "LHC+Supplementry+Cause+List+View",
-                tcl: "LHC+Urgent+Today+Cause+List+View",
                 dm: "LHC+Case+Data+Migration+Main+View",
                 x: "LHC+Lawyer+Case+Exceptions+View",
+                p: "GHQ+All+Party+List+View",
+                l: "LHC Lawyers View",
             };
 
             if (map[code]) {
@@ -185,11 +188,14 @@
                 "  h   = All Hearings",
                 "  b   = Case Bundle View",
                 "  cl  = Cause List",
+                "  tcl = Today Cause List",
+                "  ucl = Urgent Cause List",
                 "  rcl = Regular Cause List",
                 "  scl = Supplementary Cause List",
-                "  tcl = Today Cause List",
                 "  dm  = Data Migration Main View",
-                "  x   = Exceptions View"
+                "  x   = Exceptions View",
+                "  p   = All Parties",
+                "  l   = Lawyers View",
             ].join("\n");
 
             const input = prompt(msg, "");
